@@ -133,7 +133,6 @@
   # Install firefox.
   programs = {
   	git.enable = true;
-  	
 };
 
   # Allow unfree packages

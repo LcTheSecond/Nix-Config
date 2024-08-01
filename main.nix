@@ -151,6 +151,15 @@
       pkgs.fish
       pkgs.gh
   ];
+  
+  fonts.packages = with pkgs; [
+	(nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Meslo" ]; })
+];
+
+
+# VS CODE EXtention CODEIUM only work with it
+programs.nix-ld.enable = true;
+programs.nix-ld.libraries = [];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

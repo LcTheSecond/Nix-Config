@@ -150,6 +150,7 @@
       pkgs.alacritty
       pkgs.fish
       pkgs.gh
+      pkgs.brave
   ];
   
   fonts.packages = with pkgs; [

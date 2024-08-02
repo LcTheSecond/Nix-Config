@@ -7,8 +7,8 @@
 {
   imports =
     [ # Includes
-	gnome.nix
-	packages.nix
+	./gnome.nix
+	./packages.nix
     ];
 
   # Bootloader.

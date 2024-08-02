@@ -7,7 +7,8 @@
 {
   imports =
     [ # Includes
-
+	gnome.nix
+	packages.nix
     ];
 
   # Bootloader.
@@ -49,48 +50,7 @@
       pkgs.xterm
   ];
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
   
-  environment.gnome.excludePackages = with pkgs.gnome; [
-    baobab      # disk usage analyzer
-    cheese      # photo booth
-    eog         # image viewer
-    pkgs.loupe      # image viewer
-    epiphany    # web browser
-    pkgs.gedit       # text editor
-    simple-scan # document scanner
-    totem       # video player
-    yelp        # help viewer
-    evince      # document viewer
-    file-roller # archive manager
-    geary       # email client
-    seahorse    # password manager
-    pkgs.snapshot    # webcam
-    pkgs.malcontent # parental control
-    sushi # Preview in files
-    # these should be self explanatory
-    gnome-calculator
-    gnome-calendar
-    gnome-characters
-    gnome-clocks
-    gnome-contacts
-    #gnome-font-viewer
-    gnome-logs
-    gnome-maps
-    gnome-music
-    pkgs.gnome-photos
-    gnome-screenshot
-    gnome-system-monitor
-    pkgs.gnome-tour
-    gnome-weather
-    #gnome-disk-utility
-    pkgs.gnome-connections
-    pkgs.gnome-user-docs
-    pkgs.orca
-  ];
-
   # Configure keymap in X11
   services.xserver.xkb.layout = "gb";
   services.xserver.xkb.variant = "mac_intl";
@@ -130,29 +90,6 @@
     ];
   };
 
-  # Install firefox.
-  programs = {
-  	git.enable = true;
-};
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      pkgs.gnome.gnome-tweaks
-      pkgs.wget
-      pkgs.go
-      pkgs.vscode
-      pkgs.librewolf
-      pkgs.alacritty
-      pkgs.fish
-      pkgs.gh
-      pkgs.brave
-  ];
-  
   fonts.packages = with pkgs; [
 	(nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Meslo" ]; })
 ];

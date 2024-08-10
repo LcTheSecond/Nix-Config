@@ -16,7 +16,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      pkgs.gnome.gnome-tweaks
+      pkgs.gnome-tweaks
+      pkgs.gnome-terminal
       pkgs.wget
       pkgs.go
       pkgs.vscode

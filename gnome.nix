@@ -8,25 +8,26 @@
   services.xserver.desktopManager.gnome.enable = true;
   
   environment.gnome.excludePackages = with pkgs.gnome; [
-    baobab      # disk usage analyzer
-    cheese      # photo booth
-    eog         # image viewer
+    pkgs.gnome-console
+    pkgs.baobab      # disk usage analyzer
+    pkgs.cheese      # photo booth
+    pkgs.eog         # image viewer
     pkgs.loupe      # image viewer
-    epiphany    # web browser
+    pkgs.epiphany    # web browser
     pkgs.gedit       # text editor
-    simple-scan # document scanner
-    totem       # video player
-    yelp        # help viewer
-    evince      # document viewer
-    file-roller # archive manager
-    geary       # email client
-    seahorse    # password manager
+    pkgs.simple-scan # document scanner
+    pkgs.totem       # video player
+    pkgs.yelp        # help viewer
+    pkgs.evince      # document viewer
+    pkgs.file-roller # archive manager
+    pkgs.geary       # email client
+    pkgs.seahorse    # password manager
     pkgs.snapshot    # webcam
     pkgs.malcontent # parental control
-    sushi # Preview in files
+    pkgs.sushi # Preview in files
     # these should be self explanatory
-    gnome-calculator
-    gnome-calendar
+    pkgs.gnome-calculator
+    pkgs.gnome-calendar
     gnome-characters
     gnome-clocks
     gnome-contacts
@@ -35,8 +36,8 @@
     gnome-maps
     gnome-music
     pkgs.gnome-photos
-    gnome-screenshot
-    gnome-system-monitor
+    pkgs.gnome-screenshot
+    pkgs.gnome-system-monitor
     pkgs.gnome-tour
     gnome-weather
     #gnome-disk-utility

@@ -9,6 +9,7 @@
     [ # Includes
 	./gnome.nix
 	./packages.nix
+	./docker_rootless.nix
     ];
 
   # Bootloader.
@@ -117,6 +118,14 @@ programs.nix-ld.libraries = [];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  networking.firewall = {
+  enable = true;
+  allowedTCPPorts = [ 80 443 8000 8080];
+  #allowedUDPPortRanges = [
+  #  { from = 4000; to = 4007; }
+  #  { from = 8000; to = 8010; }
+  #];
+};
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

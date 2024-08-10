@@ -28,6 +28,7 @@
       pkgs.podman
       pkgs.distrobox
       pkgs.boxbuddy
+      pkgs.templ
   ];
   
 
